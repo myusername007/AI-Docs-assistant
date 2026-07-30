@@ -7,6 +7,8 @@ class Settings(BaseSettings):
     app_name: str = "AI Docs Assistant"
     debug: bool = False
 
+    anthropic_api_key: str = ""
+
     postgres_user: str = "app"
     postgres_password: str = "app"
     postgres_db: str = "app"
