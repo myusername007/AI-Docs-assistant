@@ -25,3 +25,4 @@ pydantic_settings
 asyncpg
 anthropic
 openai
+google-genai

@@ -11,6 +11,8 @@ class Settings(BaseSettings):
 
     openai_api_key: str = ""
 
+    gemini_api_key: str = ""
+
     postgres_user: str = "app"
     postgres_password: str = "app"
     postgres_db: str = "app"
