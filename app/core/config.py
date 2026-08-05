@@ -13,6 +13,8 @@ class Settings(BaseSettings):
 
     gemini_api_key: str = ""
 
+    llm_provider: str = "anthropic"
+
     postgres_user: str = "app"
     postgres_password: str = "app"
     postgres_db: str = "app"
