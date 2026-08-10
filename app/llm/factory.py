@@ -5,6 +5,7 @@ from app.llm.anthropic_client import AnthropicClient
 from app.llm.base import LLMClient
 from app.llm.gemini_client import GeminiClient
 from app.llm.openai_client import OpenAIClient
+from app.llm.observability import ObservableLLMClient
 
 _REGISTRY: dict[str, type[LLMClient]] = {
     "anthropic": AnthropicClient,
@@ -26,4 +27,4 @@ def build_client(provider: str) -> LLMClient:
 @lru_cache
 def get_llm_client() -> LLMClient:
     """Cached default client based on settings.llm_provider."""
-    return build_client(settings.llm_provider)
+    return ObservableLLMClient(build_client(settings.llm_provider))
